@@ -1,0 +1,10 @@
+C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\bin\Debug\ZombieApocalypse.exe.config
+C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\bin\Debug\ZombieApocalypse.exe
+C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\bin\Debug\ZombieApocalypse.pdb
+C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.csprojAssemblyReference.cache
+C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.Form1.resources
+C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.Properties.Resources.resources
+C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.csproj.GenerateResource.cache
+C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.csproj.CoreCompileInputs.cache
+C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.exe
+C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.pdb
