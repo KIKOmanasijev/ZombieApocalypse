@@ -32,11 +32,12 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.AmmoText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.HeroHealth = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.HeroHealth = new System.Windows.Forms.ToolStripProgressBar();
             this.kills = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lebelText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.levelText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.HeroName1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,67 +49,79 @@
             // statusStrip1
             // 
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AmmoText,
             this.toolStripStatusLabel1,
             this.HeroHealth,
             this.kills,
-            this.lebelText});
+            this.levelText,
+            this.HeroName1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 35);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1212, 42);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.Paint += new System.Windows.Forms.PaintEventHandler(this.StatusStrip1_Paint);
             // 
             // AmmoText
             // 
-            this.AmmoText.Font = new System.Drawing.Font("SF Pro Display", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.AmmoText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.AmmoText.Name = "AmmoText";
             this.AmmoText.Padding = new System.Windows.Forms.Padding(0, 0, 100, 0);
-            this.AmmoText.Size = new System.Drawing.Size(204, 30);
+            this.AmmoText.Size = new System.Drawing.Size(236, 37);
             this.AmmoText.Text = "Ammo: 30";
             // 
-            // timer2
+            // toolStripStatusLabel1
             // 
-            this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(101, 37);
+            this.toolStripStatusLabel1.Text = "Health:";
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.ToolStripStatusLabel1_Click);
             // 
             // HeroHealth
             // 
             this.HeroHealth.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.HeroHealth.Name = "HeroHealth";
-            this.HeroHealth.Size = new System.Drawing.Size(100, 29);
+            this.HeroHealth.Size = new System.Drawing.Size(133, 36);
             this.HeroHealth.Click += new System.EventHandler(this.HeroHealth_Click);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("SF Pro Display", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(75, 30);
-            this.toolStripStatusLabel1.Text = "Health:";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.ToolStripStatusLabel1_Click);
             // 
             // kills
             // 
-            this.kills.Font = new System.Drawing.Font("SF Pro Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kills.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kills.Name = "kills";
             this.kills.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.kills.Size = new System.Drawing.Size(164, 30);
+            this.kills.Size = new System.Drawing.Size(184, 37);
             this.kills.Text = "Kills: 0";
             // 
-            // lebelText
+            // levelText
             // 
-            this.lebelText.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lebelText.Name = "lebelText";
-            this.lebelText.Size = new System.Drawing.Size(77, 30);
-            this.lebelText.Text = "Level 1";
+            this.levelText.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.levelText.Name = "levelText";
+            this.levelText.Size = new System.Drawing.Size(100, 37);
+            this.levelText.Text = "Level 1";
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
+            // 
+            // HeroName1
+            // 
+            this.HeroName1.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.HeroName1.Name = "HeroName1";
+            this.HeroName1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.HeroName1.Size = new System.Drawing.Size(188, 37);
+            this.HeroName1.Text = "Hero Name";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1212, 554);
             this.Controls.Add(this.statusStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -132,7 +145,8 @@
         private System.Windows.Forms.ToolStripProgressBar HeroHealth;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel kills;
-        private System.Windows.Forms.ToolStripStatusLabel lebelText;
+        private System.Windows.Forms.ToolStripStatusLabel levelText;
+        private System.Windows.Forms.ToolStripStatusLabel HeroName1;
     }
 }
 

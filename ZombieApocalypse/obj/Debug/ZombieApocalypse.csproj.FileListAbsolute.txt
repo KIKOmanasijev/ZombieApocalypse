@@ -8,3 +8,15 @@ C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApo
 C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.csproj.CoreCompileInputs.cache
 C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.exe
 C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.pdb
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\bin\Debug\ZombieApocalypse.exe.config
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\bin\Debug\ZombieApocalypse.exe
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\bin\Debug\ZombieApocalypse.pdb
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.csprojAssemblyReference.cache
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.Form1.resources
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.Properties.Resources.resources
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.csproj.GenerateResource.cache
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.csproj.CoreCompileInputs.cache
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.exe
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.pdb
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.GameOver.resources
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.NewGame.resources
