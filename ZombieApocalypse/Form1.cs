@@ -138,7 +138,11 @@ namespace ZombieApocalypse
         }
         public void winner()
         {
-
+            timer1.Stop();
+            timer2.Stop();
+            level2doc.endGame();
+            MessageBox.Show("You won!");
+          
         }
         private void StatusStrip1_Paint(object sender, PaintEventArgs e)
         {
@@ -238,7 +242,7 @@ namespace ZombieApocalypse
             timer1.Stop();
             timer2.Stop();
             level1doc.endGame();
-            MessageBox.Show("You won Level1!");
+            MessageBox.Show("You won Level1!", "Next Level", MessageBoxButtons.OK);
             levelText.Text = "Level 2";
             level1doc = null;
             level2doc = new Level2(ref hero, Width, Height, random);
