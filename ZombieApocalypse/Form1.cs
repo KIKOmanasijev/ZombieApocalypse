@@ -224,7 +224,18 @@ namespace ZombieApocalypse
                 if (level1doc != null)
                     level1doc.Move(1);
                 if (level2doc != null)
+                {
                     level2doc.Move();
+                    foreach (Bullet b in level2doc.ZombieBullets)
+                    {
+                        if (b.isHit(hero.Position))
+                        {
+                            hero.Health -= 10;
+                            b.Alive = false;
+                        }
+                    }
+                }
+                   
             }
             catch(Exception ec)
             { }
