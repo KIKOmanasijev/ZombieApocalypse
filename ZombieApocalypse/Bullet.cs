@@ -12,17 +12,33 @@ namespace ZombieApocalypse
         public Point point;
         public Hero.Direction Direction;
         public bool Alive;
-        
-        public Bullet(Point point, Hero.Direction dir)
+        public Color Color;
+        public int x { get; set; }
+        public int y { get; set; }
+        public Bullet(Point point, Hero.Direction dir, Color color)
         {
             this.point = point;
             Direction = dir;
             Alive = true;
+            Color = color;
         }
-
+        public Bullet(Point point, Hero.Direction dir, Color color, int x, int y)
+        {
+            this.point = point;
+            Direction = dir;
+            Alive = true;
+            Color = color;
+            this.x = x;
+            this.y = y;
+        }
+        public void DrawBossBullets(Graphics g)
+        {
+            Brush b = new SolidBrush(Color);
+            g.FillEllipse(b, point.X, point.Y, x, y);
+        }
         public void Draw(Graphics g)
         {
-            Brush b = new SolidBrush(Color.OrangeRed);
+            Brush b = new SolidBrush(Color);
             g.FillEllipse(b, point.X, point.Y, 5, 5);
         }
 

@@ -9,6 +9,7 @@ namespace ZombieApocalypse
 {
     public class Hero
     {
+        public string Name { get; set; }
         public int Health { get; set; }
         public Point Position { get; set; }
         public Image Image { get; set; }
@@ -24,7 +25,7 @@ namespace ZombieApocalypse
             Right,
             Down
         }
-        public Hero(int Width, int Height)
+        public Hero(int Width, int Height, string Name)
         {
             Health = 100;
             Position = new Point(Width / 2, Height / 2);
@@ -33,6 +34,7 @@ namespace ZombieApocalypse
             Bullets = new List<Bullet>();
             Ammo = 20;
             Kills = 0;
+            this.Name = Name;
         }
 
         public void Draw(Graphics g)
@@ -100,7 +102,7 @@ namespace ZombieApocalypse
             Point p = new Point(Position.X + 25, Position.Y + 25);
             if (Ammo > 0)
             {
-                Bullets.Add(new Bullet(p, Dir));
+                Bullets.Add(new Bullet(p, Dir, Color.OrangeRed));
                 Ammo--;
             }
             

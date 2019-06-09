@@ -13,12 +13,13 @@ namespace ZombieApocalypse
         public Image Image;
         public int Health;
         public int Velocity;
-        
+        public Hero.Direction Direction { get; set; }
         public Boss(int y)
         {
             Health = 100;
             Velocity = 5;
             Image = Properties.Resources.bright;
+            Direction = Hero.Direction.Right;
             Position = new Point(30, y);
         }
 
@@ -30,24 +31,40 @@ namespace ZombieApocalypse
             if (Position.X > HeroLocation.X)
             {
                 if (hor > ver)
+                {
                     Image = Properties.Resources.bleft;
+                    Direction = Hero.Direction.Left;
+                }
                 Position = new Point(Position.X - Velocity, Position.Y);
             }
 
             if (Position.X < HeroLocation.X)
             {
                 if (hor > ver)
+                {
                     Image = Properties.Resources.bright;
+                    Direction = Hero.Direction.Right;
+                }
                 Position = new Point(Position.X + Velocity, Position.Y);
             }
 
             if (Position.Y > HeroLocation.Y)
             {
+                if (hor < ver)
+                {
+                    Image = Properties.Resources.bright;
+                    Direction = Hero.Direction.Up;
+                }
                 Position = new Point(Position.X, Position.Y - Velocity);
             }
 
             if (Position.Y < HeroLocation.Y)
             {
+                if (hor < ver)
+                {
+                    Image = Properties.Resources.bright;
+                    Direction = Hero.Direction.Down;
+                }
                 Position = new Point(Position.X, Position.Y + Velocity);
             }
         }
@@ -55,6 +72,14 @@ namespace ZombieApocalypse
         public void Draw(Graphics g)
         {
             g.DrawImage(Image, Position.X, Position.Y, 75, 75);
+        }
+        public bool isHit(Point HeroLocation)
+        {
+            if (Position.X >= HeroLocation.X && Position.X <= HeroLocation.X + 50 && Position.Y >= HeroLocation.Y && Position.Y <= HeroLocation.Y + 50)
+                return true;
+            else
+                return false;
+
         }
     }
 }
