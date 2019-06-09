@@ -238,7 +238,7 @@ namespace ZombieApocalypse
             timer1.Stop();
             timer2.Stop();
             level1doc.endGame();
-            MessageBox.Show("You won Level1!");
+            MessageBox.Show("You won Level1, you are now on Level2!");
             levelText.Text = "Level 2";
             level1doc = null;
             level2doc = new Level2(ref hero, Width, Height, random);

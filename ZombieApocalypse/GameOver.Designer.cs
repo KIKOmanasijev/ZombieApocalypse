@@ -39,9 +39,10 @@
             this.gameoverlabel.AutoSize = true;
             this.gameoverlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameoverlabel.ForeColor = System.Drawing.Color.Red;
-            this.gameoverlabel.Location = new System.Drawing.Point(117, 67);
+            this.gameoverlabel.Location = new System.Drawing.Point(88, 54);
+            this.gameoverlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gameoverlabel.Name = "gameoverlabel";
-            this.gameoverlabel.Size = new System.Drawing.Size(298, 58);
+            this.gameoverlabel.Size = new System.Drawing.Size(235, 46);
             this.gameoverlabel.TabIndex = 0;
             this.gameoverlabel.Text = "Game Over!";
             // 
@@ -49,17 +50,19 @@
             // 
             this.EnemiesText.AutoSize = true;
             this.EnemiesText.Font = new System.Drawing.Font("Microsoft YaHei Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnemiesText.Location = new System.Drawing.Point(215, 139);
+            this.EnemiesText.Location = new System.Drawing.Point(189, 100);
+            this.EnemiesText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EnemiesText.Name = "EnemiesText";
-            this.EnemiesText.Size = new System.Drawing.Size(131, 20);
+            this.EnemiesText.Size = new System.Drawing.Size(114, 16);
             this.EnemiesText.TabIndex = 1;
-            this.EnemiesText.Text = "You kill: 10 Enemies";
+            this.EnemiesText.Text = "You killed: 10 Enemies";
             // 
             // NewGame
             // 
-            this.NewGame.Location = new System.Drawing.Point(351, 217);
+            this.NewGame.Location = new System.Drawing.Point(263, 176);
+            this.NewGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NewGame.Name = "NewGame";
-            this.NewGame.Size = new System.Drawing.Size(160, 54);
+            this.NewGame.Size = new System.Drawing.Size(120, 44);
             this.NewGame.TabIndex = 12;
             this.NewGame.Text = "New Game";
             this.NewGame.UseVisualStyleBackColor = true;
@@ -67,9 +70,10 @@
             // 
             // Exit
             // 
-            this.Exit.Location = new System.Drawing.Point(58, 217);
+            this.Exit.Location = new System.Drawing.Point(44, 176);
+            this.Exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(169, 54);
+            this.Exit.Size = new System.Drawing.Size(127, 44);
             this.Exit.TabIndex = 3;
             this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = true;
@@ -77,13 +81,14 @@
             // 
             // GameOver
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 317);
+            this.ClientSize = new System.Drawing.Size(420, 258);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.NewGame);
             this.Controls.Add(this.EnemiesText);
             this.Controls.Add(this.gameoverlabel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GameOver";
             this.Text = "GameOver";
             this.ResumeLayout(false);
