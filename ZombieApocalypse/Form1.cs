@@ -13,6 +13,8 @@ namespace ZombieApocalypse
   
     public partial class Form1 : Form
     {
+        
+        
         GameOver GameOver;
         Random random; 
         public Level1 level1doc;
@@ -23,7 +25,7 @@ namespace ZombieApocalypse
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-          
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -79,10 +81,11 @@ namespace ZombieApocalypse
                 
                 level1doc = new Level1(this.Width, this.Height, ref hero, random);
                 level2doc = null;
-
+              
                 timer1.Start();
                 timer2.Start();
-              
+               
+
             }
             else
             {
@@ -138,7 +141,13 @@ namespace ZombieApocalypse
         }
         public void winner()
         {
-
+            timer1.Stop();
+            timer2.Stop();
+            Winner win = new Winner();
+            win.setKill(this.hero);
+            if (win.ShowDialog() == DialogResult.OK)
+                newGame();
+            else this.Close();
         }
         private void StatusStrip1_Paint(object sender, PaintEventArgs e)
         {
@@ -226,14 +235,7 @@ namespace ZombieApocalypse
                 if (level2doc != null)
                 {
                     level2doc.Move();
-                    foreach (Bullet b in level2doc.ZombieBullets)
-                    {
-                        if (b.isHit(hero.Position))
-                        {
-                            hero.Health -= 10;
-                            b.Alive = false;
-                        }
-                    }
+                  
                 }
                    
             }

@@ -228,8 +228,21 @@ namespace ZombieApocalypse
                         b.Alive = false;
                     }
                 }
-               
-                
+
+                foreach (Bullet b in BossBullets)
+                {
+                    if (b.isHit(hero.Position))
+                    {
+                        hero.Health -= 20;
+                        if (hero.Health <= 0)
+                        {
+                            hero.Image = Properties.Resources.dead;
+                            return true;
+                        }
+                        b.Alive = false;
+                    }
+                }
+
                 for (int i = ZombieBullets.Count - 1; i >= 0; i--)
                 {
                     if (!ZombieBullets[i].Alive)

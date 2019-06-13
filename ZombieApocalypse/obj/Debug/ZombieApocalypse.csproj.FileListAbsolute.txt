@@ -22,3 +22,4 @@ C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\ob
 C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.NewGame.resources
 C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.GameOver.resources
 C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.NewGame.resources
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.Winner.resources
