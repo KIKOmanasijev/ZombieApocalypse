@@ -18,6 +18,7 @@ namespace ZombieApocalypse
         public List<AmmoGift> gifts;
         public int Count;
         Random r;
+        public Image img;
         public Boss boss;
         public bool hasBoss;
         public Level1(int Width, int Height, ref Hero h, Random rand)
@@ -28,6 +29,8 @@ namespace ZombieApocalypse
             Shoots = false;
             zombies = new List<Zombie>();
             zombies.Add(new Zombie(new Point(100, 100)));
+            img = Properties.Resources.level1;
+            
 
             r = rand;
             boss = new Boss(r.Next(0, r.Next(0, Height - 40)));
@@ -47,7 +50,7 @@ namespace ZombieApocalypse
             try
             {
                 hero.MoveBullets(width, height);
-                if (hero.Kills >= 2)
+                if (hero.Kills >= 5)
                     hasBoss = true;
                 foreach (Bullet b in hero.Bullets)
                 {
@@ -99,7 +102,7 @@ namespace ZombieApocalypse
         public bool timer2(int Width, int Height)
         {
             Count++;
-            if (hero.Kills >= 2)
+            if (hero.Kills >= 5)
                 boss.Move(hero.Position);
 
             foreach (Zombie z in zombies)

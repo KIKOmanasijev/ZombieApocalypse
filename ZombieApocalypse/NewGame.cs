@@ -12,13 +12,16 @@ namespace ZombieApocalypse
 {
     public partial class NewGame : Form
     {
-       
+        int width ;
+         int   height;
         public string name;
         public NewGame()
         {
             InitializeComponent();
-          
-            
+            this.BackgroundImage = Properties.Resources.bgNewGame;
+            width = this.Width;
+            height = this.Height;
+            BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,5 +50,14 @@ namespace ZombieApocalypse
                 name = NameHero.Text;
             }
         }
+
+        private void NewGame_ResizeEnd(object sender, EventArgs e)
+        {
+            this.Width = width;
+            this.Height = height;
+        }
+
+      
+      
     }
 }

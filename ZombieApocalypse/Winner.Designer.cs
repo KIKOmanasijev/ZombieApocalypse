@@ -78,9 +78,9 @@
             this.label2.Font = new System.Drawing.Font("Sitka Small", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(111, 241);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 25);
+            this.label2.Size = new System.Drawing.Size(191, 25);
             this.label2.TabIndex = 6;
-            this.label2.Text = "and Kill 1 Zombies";
+            this.label2.Text = "and Killed 1 Zombies";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button2
@@ -105,6 +105,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Winner";
             this.Text = "Winner";
+            this.ResizeEnd += new System.EventHandler(this.Winner_ResizeEnd);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Winner_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();

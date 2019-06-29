@@ -14,16 +14,20 @@ namespace ZombieApocalypse
         public int Health;
         public int Velocity;
         public Hero.Direction Direction { get; set; }
+        public Boss()
+        {
+
+        }
         public Boss(int y)
         {
             Health = 100;
             Velocity = 5;
-            Image = Properties.Resources.bright;
+            Image = Properties.Resources.bright2;
             Direction = Hero.Direction.Right;
             Position = new Point(30, y);
         }
 
-        public void Move(Point HeroLocation)
+        public virtual void Move(Point HeroLocation)
         {
             int hor = Math.Abs(HeroLocation.X - Position.X);
             int ver = Math.Abs(HeroLocation.Y - Position.Y);
@@ -32,7 +36,7 @@ namespace ZombieApocalypse
             {
                 if (hor > ver)
                 {
-                    Image = Properties.Resources.bleft;
+                    Image = Properties.Resources.bleft1;
                     Direction = Hero.Direction.Left;
                 }
                 Position = new Point(Position.X - Velocity, Position.Y);
@@ -42,7 +46,7 @@ namespace ZombieApocalypse
             {
                 if (hor > ver)
                 {
-                    Image = Properties.Resources.bright;
+                    Image = Properties.Resources.bright2;
                     Direction = Hero.Direction.Right;
                 }
                 Position = new Point(Position.X + Velocity, Position.Y);
@@ -52,7 +56,7 @@ namespace ZombieApocalypse
             {
                 if (hor < ver)
                 {
-                    Image = Properties.Resources.bright;
+                    Image = Properties.Resources.bright2;
                     Direction = Hero.Direction.Up;
                 }
                 Position = new Point(Position.X, Position.Y - Velocity);
@@ -62,7 +66,7 @@ namespace ZombieApocalypse
             {
                 if (hor < ver)
                 {
-                    Image = Properties.Resources.bright;
+                    Image = Properties.Resources.bright2;
                     Direction = Hero.Direction.Down;
                 }
                 Position = new Point(Position.X, Position.Y + Velocity);

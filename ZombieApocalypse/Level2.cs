@@ -15,11 +15,12 @@ namespace ZombieApocalypse
         public int Height { get; set; }
         public List<Bullet> BossBullets { get; set; }
         public List<Bullet> ZombieBullets { get; set; }
-        public List<Zombie> zombies;
+        public List<Zombie2> zombies;
         public List<AmmoGift> gifts;
         public int Count;
         Random r;
-        public Boss boss { get; set; }
+        public Image img;
+        public Boss2 boss { get; set; }
         public bool hasBoss;
         public Level2(ref Hero h, int w, int he, Random rand)
         {
@@ -28,18 +29,21 @@ namespace ZombieApocalypse
             Height = he;
             hero = h;
             r = rand;
-            zombies = new List<Zombie>();
+            zombies = new List<Zombie2>();
             gifts = new List<AmmoGift>();
-            Zombie newZoombie = new Zombie(new Point(100, 100));
+            Zombie2 newZoombie = new Zombie2(new Point(100, 100), Properties.Resources.zw2right);
+            
             zombies.Add(newZoombie);
             ZombieBullets = new List<Bullet>();
-            boss = new Boss(r.Next(0, r.Next(0, Height - 40)));
+            boss = new Boss2(r.Next(0, r.Next(0, Height - 40)));
+            boss.Image = Properties.Resources.z2bright;
             hasBoss = false;
+            img = Properties.Resources.level2;
             BossBullets = new List<Bullet>();
         }
         public void Paint(Graphics g)
         {
-           foreach(var item in zombies)
+           foreach(Zombie2 item in zombies)
             {
                 item.Draw(g);
             }
@@ -93,7 +97,7 @@ namespace ZombieApocalypse
             if (hero.Kills >= 10)
                 boss.Move(hero.Position);
 
-            foreach (Zombie z in zombies)
+            foreach (Zombie2 z in zombies)
             {
                 z.Move(hero.Position);
 
@@ -114,15 +118,16 @@ namespace ZombieApocalypse
             if (Count % 70 == 0)
             {
                 int top = r.Next(0, 2);
-                zombies.Add(new Zombie(new Point(r.Next(0, Width - 30), top == 0 ? 50 : Height - 40)));
+
+                zombies.Add(new Zombie2(new Point(r.Next(0, Width - 30), top == 0 ? 50 : Height - 40), Properties.Resources.zw2right));
                 top = r.Next(0, 2);
-                zombies.Add(new Zombie(new Point(r.Next(0, Width - 30), top == 0 ? 50 : Height - 40)));
+                zombies.Add(new Zombie2(new Point(r.Next(0, Width - 30), top == 0 ? 50 : Height - 40), Properties.Resources.zw2right));
                 top = r.Next(0, 2);
-                zombies.Add(new Zombie(new Point(r.Next(0, Width - 30), top == 0 ? 50 : Height - 40)));
+                zombies.Add(new Zombie2(new Point(r.Next(0, Width - 30), top == 0 ? 50 : Height - 40), Properties.Resources.zw2right));
             }
             if(Count % 50 == 0 || Count % 51 == 0 || Count % 52 == 0)
             {
-                foreach(var item in zombies)
+                foreach(Zombie2 item in zombies)
                 {
                     ZombieBullets.Add(new Bullet(item.Position, item.Direction, Color.Green));
                   
@@ -170,8 +175,7 @@ namespace ZombieApocalypse
 
         public bool timer1(ref bool won)
         {
-            try
-            {
+          
                 foreach (var item in BossBullets)
                 {
                     item.Move(Width, Height);
@@ -265,11 +269,7 @@ namespace ZombieApocalypse
                     }
                 }
                 return false;
-            }
-            catch (Exception exc)
-            {
-                return false;
-            }
+           
         }
         public void Resize(int w, int h)
         {

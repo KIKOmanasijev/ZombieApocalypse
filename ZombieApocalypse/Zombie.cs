@@ -15,6 +15,10 @@ namespace ZombieApocalypse
         public bool Alive { get; set; }
         public int Velocity { get; set; }
         public Hero.Direction Direction { get; set; }
+        public Zombie()
+        {
+
+        }
         public Zombie(Point pos)
         {
             Position = pos;
@@ -23,13 +27,14 @@ namespace ZombieApocalypse
             Velocity = 4;
             Direction = Hero.Direction.Down;
         }
+        
 
-        public void Draw(Graphics g)
+        public virtual void Draw(Graphics g)
         {
             g.DrawImage(Image, Position.X, Position.Y, 40, 40);
         }
-
-        public void Move(Point HeroLocation)
+       
+        public virtual void Move(Point HeroLocation)
         {
             int hor = Math.Abs(HeroLocation.X - Position.X);
             int ver = Math.Abs(HeroLocation.Y - Position.Y);

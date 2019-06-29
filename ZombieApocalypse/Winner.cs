@@ -15,11 +15,14 @@ namespace ZombieApocalypse
         Timer timer3;
         Random r;
         public Hero hero;
+        int width;
+        int height;
         public Winner()
         {
             InitializeComponent();
             DoubleBuffered = true;
-          
+            width = this.Width;
+            height = this.Height;
             Invalidate(true);
 
             
@@ -34,7 +37,7 @@ namespace ZombieApocalypse
         {
             hero = her;
             textBox1.Text = "CONGRATULATIONS\n" + hero.Name +"\nYOU WON!";
-            label2.Text = "You kill 2 BOSSES\n and \nYou Kill " + hero.Kills + " ZOMBIES";
+            label2.Text = "You killed 2 BOSSES\n and \nYou Killed " + hero.Kills + " ZOMBIES";
 
         }
         private void timer3_tick(object sender, EventArgs e)
@@ -74,6 +77,12 @@ namespace ZombieApocalypse
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+        }
+
+        private void Winner_ResizeEnd(object sender, EventArgs e)
+        {
+            this.Width = width;
+            this.Height = height;
         }
     }
 }

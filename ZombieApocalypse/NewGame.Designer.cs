@@ -33,71 +33,63 @@
             this.label2 = new System.Windows.Forms.Label();
             this.NameHero = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(58, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 42);
+            this.label1.Size = new System.Drawing.Size(256, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "New Game!";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 51);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(79, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 13);
+            this.label2.Size = new System.Drawing.Size(220, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Kill As Much Zombies As You Can";
             // 
             // NameHero
             // 
-            this.NameHero.Location = new System.Drawing.Point(45, 143);
-            this.NameHero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NameHero.Location = new System.Drawing.Point(49, 145);
+            this.NameHero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NameHero.Multiline = true;
             this.NameHero.Name = "NameHero";
-            this.NameHero.Size = new System.Drawing.Size(200, 20);
+            this.NameHero.Size = new System.Drawing.Size(265, 47);
             this.NameHero.TabIndex = 2;
             this.NameHero.Validating += new System.ComponentModel.CancelEventHandler(this.NameHero_Validating);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 128);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(129, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Your Name";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(138, 221);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 28);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label3.Text = "Your Name:";
             // 
             // button2
             // 
             this.button2.CausesValidation = false;
-            this.button2.Location = new System.Drawing.Point(48, 221);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(173, 408);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 28);
+            this.button2.Size = new System.Drawing.Size(156, 47);
             this.button2.TabIndex = 7;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
@@ -107,20 +99,35 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = global::ZombieApocalypse.Properties.Resources.paly1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(30, 220);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(434, 154);
+            this.button1.TabIndex = 6;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // NewGame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 262);
+            this.ClientSize = new System.Drawing.Size(543, 526);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.NameHero);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NewGame";
-            this.Text = "NewGame";
+            this.Text = "New Game";
+            this.ResizeEnd += new System.EventHandler(this.NewGame_ResizeEnd);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

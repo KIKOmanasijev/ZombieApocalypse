@@ -31,6 +31,7 @@ namespace ZombieApocalypse
         private void Form1_Load(object sender, EventArgs e)
         {
             newGame();
+            BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -80,6 +81,8 @@ namespace ZombieApocalypse
                 random = new Random();
                 
                 level1doc = new Level1(this.Width, this.Height, ref hero, random);
+                this.BackgroundImage = level1doc.img;
+                
                 level2doc = null;
               
                 timer1.Start();
@@ -255,6 +258,7 @@ namespace ZombieApocalypse
             levelText.Text = "Level 2";
             level1doc = null;
             level2doc = new Level2(ref hero, Width, Height, random);
+            this.BackgroundImage = level2doc.img;
             timer1.Start();
             timer2.Start();
             Invalidate(true);
