@@ -10,7 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WMPLib;
 namespace ZombieApocalypse
 {
     [Serializable]
@@ -21,11 +21,15 @@ namespace ZombieApocalypse
         public string name;
         public string FileName = "ZombieApocalypse";
         HighScores highScores;
+        public WindowsMediaPlayer player = new WindowsMediaPlayer();
         public NewGame()
         {
+            player.URL = "start.mp3";
+            player.controls.play();
             try
             {
                 InitializeComponent();
+                
                 viewHighScores();
                 if(highScores != null)
                 {
@@ -35,7 +39,7 @@ namespace ZombieApocalypse
                         textBox1.Text +=  highScores.highScores[i].ToString() + " - " + highScores.names[highScores.highScores[i]] + Environment.NewLine;
                     }
                 }
-                this.BackgroundImage = Properties.Resources.groundstuff;
+                this.BackgroundImage = Properties.Resources.picgr;
                 width = this.Width;
                 height = this.Height;
                 BackgroundImageLayout = ImageLayout.Stretch;

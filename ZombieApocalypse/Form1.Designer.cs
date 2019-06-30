@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -39,6 +40,7 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.AmmoText = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.volumeimg = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,13 +55,14 @@
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.volumeimg,
             this.AmmoText,
             this.toolStripStatusLabel1,
             this.HeroHealth,
             this.kills,
             this.levelText,
-            this.HeroName1,
-            this.toolStripStatusLabel2});
+            this.toolStripStatusLabel2,
+            this.HeroName1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
@@ -96,6 +99,7 @@
             // levelText
             // 
             this.levelText.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.levelText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.levelText.Name = "levelText";
             this.levelText.Size = new System.Drawing.Size(100, 37);
             this.levelText.Text = "Level 1";
@@ -125,10 +129,16 @@
             // 
             // toolStripStatusLabel2
             // 
-            this.toolStripStatusLabel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripStatusLabel2.Image = global::ZombieApocalypse.Properties.Resources.right;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(20, 37);
+            // 
+            // volumeimg
+            // 
+            this.volumeimg.Image = global::ZombieApocalypse.Properties.Resources.on;
+            this.volumeimg.Name = "volumeimg";
+            this.volumeimg.Size = new System.Drawing.Size(20, 37);
+            this.volumeimg.Click += new System.EventHandler(this.volumeimg_Click);
             // 
             // Form1
             // 
@@ -136,6 +146,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1232, 554);
             this.Controls.Add(this.statusStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Zombie Apocalypse";
@@ -163,6 +174,7 @@
         private System.Windows.Forms.ToolStripStatusLabel levelText;
         private System.Windows.Forms.ToolStripStatusLabel HeroName1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel volumeimg;
     }
 }
 

@@ -38,7 +38,7 @@ namespace ZombieApocalypse
             highScores.Sort();
             if(highScores.Count>5)
             {
-                for(int i=5;i<highScores.Count;i++)
+                for(int i=0;i<highScores.Count-5;i++)
                 {
                     names.Remove(highScores[i]);
                     highScores.RemoveAt(i);

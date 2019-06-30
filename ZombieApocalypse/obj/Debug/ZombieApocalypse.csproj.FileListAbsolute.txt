@@ -23,3 +23,8 @@ C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\ob
 C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.GameOver.resources
 C:\Users\Kiko\source\repos\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.NewGame.resources
 C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.Winner.resources
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\bin\Debug\Interop.WMPLib.dll
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\Interop.WMPLib.dll
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Monika Dimitrova\Desktop\newFolder\ZombieApocalypse\ZombieApocalypse\obj\Debug\ZombieApocalypse.csproj.ResolveComReference.cache

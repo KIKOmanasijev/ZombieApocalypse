@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameOver));
             this.EnemiesText = new System.Windows.Forms.Label();
             this.NewGame = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
@@ -79,6 +80,7 @@
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.NewGame);
             this.Controls.Add(this.EnemiesText);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "GameOver";
             this.Text = "Game Over";
