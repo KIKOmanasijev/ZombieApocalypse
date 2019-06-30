@@ -181,7 +181,8 @@ namespace ZombieApocalypse
                     item.Move(Width, Height);
                 }
                 hero.MoveBullets(Width, Height);
-                if (hero.Kills >= 2)
+
+                if (hero.Kills >= 20)
                     hasBoss = true;
                 foreach (Bullet b in ZombieBullets)
                     {

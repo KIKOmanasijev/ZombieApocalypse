@@ -52,24 +52,26 @@ namespace ZombieApocalypse
                 hero.MoveBullets(width, height);
                 if (hero.Kills >= 3)
                     hasBoss = true;
-                foreach (Bullet b in hero.Bullets)
+               // foreach (Bullet b in hero.Bullets)
+                for (int i = 0; i < hero.Bullets.Count; i++)
                 {
-                    foreach (Zombie z in zombies)
+                    //foreach (Zombie z in zombies)
+                    for (int j = 0; j < zombies.Count;j++)
                     {
-                        if (b.isHit(z.Position))
+                        if (hero.Bullets[i].isHit(zombies[j].Position))
                         {
-                            z.Alive = false;
-                            b.Alive = false;
+                            zombies[j].Alive = false;
+                            hero.Bullets[i].Alive = false;
                             hero.Kills++;
                         }
                     }
 
                     if (hasBoss)
                     {
-                        if (b.isHit(boss.Position))
+                        if (hero.Bullets[i].isHit(boss.Position))
                         {
                             boss.Health -= 20;
-                            b.Alive = false;
+                            hero.Bullets[i].Alive = false;
                        
                         }
 
@@ -149,7 +151,7 @@ namespace ZombieApocalypse
                 zombies.Add(new Zombie(new Point(r.Next(0, width - 30), top == 0 ? 50 : Height - 40)));
             }
 
-            if (Count % 150 == 0)
+            if (Count % 100 == 0)
                 gifts.Add(new AmmoGift(new Point(r.Next(0, Width - 50), r.Next(30, Height - 50))));
 
             foreach (AmmoGift g in gifts)
@@ -172,7 +174,7 @@ namespace ZombieApocalypse
             {
                 if (g.isHit(hero.Position))
                 {
-                    hero.Ammo += 5;
+                    hero.Ammo += 15;
                 }
             }
 
