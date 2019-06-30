@@ -36,7 +36,7 @@ namespace ZombieApocalypse
                     for(int i= highScores.highScores.Count-1; i>=0; i--)
                     {
                         
-                        textBox1.Text +=  highScores.highScores[i].ToString() + " - " + highScores.names[highScores.highScores[i]] + Environment.NewLine;
+                        textBox2.Text +=  highScores.highScores[i].ToString() + " - " + highScores.names[highScores.highScores[i]] + Environment.NewLine;
                     }
                 }
                 this.BackgroundImage = Properties.Resources.picgr;
@@ -98,6 +98,9 @@ namespace ZombieApocalypse
             this.Height = height;
         }
 
-       
+        private void button3_Click(object sender, EventArgs e)
+        {
+           DialogResult =  DialogResult.Cancel;
+        }
     }
 }
