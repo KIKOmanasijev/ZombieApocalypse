@@ -7,7 +7,9 @@
 </p>
 <h4>
 Изглед на почетната форма и поглед на најдобрите резултати:
+  
 </h4>
+![alt text](https://ithub.com/KIKOmanasijev/ZombieApocalypse/edit/master/img/to/scrNewGame.JPG)
 <h5>
   Опис на играта
   </h5>
