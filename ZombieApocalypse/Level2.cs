@@ -94,7 +94,7 @@ namespace ZombieApocalypse
         public bool timer2()
         {
             Count++;
-            if (hero.Kills >= 2)
+            if (hero.Kills >= 15)
                 boss.Move(hero.Position);
        
             foreach (Zombie2 z in zombies)
@@ -129,7 +129,7 @@ namespace ZombieApocalypse
             {
                 foreach(Zombie2 item in zombies)
                 {
-                    ZombieBullets.Add(new Bullet(item.Position, item.Direction, Color.Green));
+                    ZombieBullets.Add(new Bullet(item.Position, item.Direction, Color.Black));
                   
                 }
                 
@@ -182,7 +182,7 @@ namespace ZombieApocalypse
                 }
                 hero.MoveBullets(Width, Height);
 
-                if (hero.Kills >= 20)
+                if (hero.Kills >= 15)
                     hasBoss = true;
                 foreach (Bullet b in ZombieBullets)
                     {

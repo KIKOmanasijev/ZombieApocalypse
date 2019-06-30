@@ -29,7 +29,7 @@ namespace ZombieApocalypse
         width = this.Width;
             height = this.Height;
             this.enemies = enemies;
-            EnemiesText.Text = "You kill " + this.enemies + " zoombies";
+            EnemiesText.Text = "You killed " + this.enemies + " Enemies";
         }
 
         private void NewGame_Click(object sender, EventArgs e)

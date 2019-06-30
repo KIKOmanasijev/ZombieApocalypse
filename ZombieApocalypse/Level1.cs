@@ -50,7 +50,7 @@ namespace ZombieApocalypse
             try
             {
                 hero.MoveBullets(width, height);
-                if (hero.Kills >= 3)
+                if (hero.Kills >= 4)
                     hasBoss = true;
                // foreach (Bullet b in hero.Bullets)
                 for (int i = 0; i < hero.Bullets.Count; i++)
@@ -104,7 +104,7 @@ namespace ZombieApocalypse
         public bool timer2(int Width, int Height)
         {
             Count++;
-            if (hero.Kills >= 3)
+            if (hero.Kills >= 4)
                 boss.Move(hero.Position);
 
             foreach (Zombie z in zombies)
