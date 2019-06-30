@@ -63,6 +63,7 @@
       <DependentUpon>GameOver.cs</DependentUpon>
     </Compile>
     <Compile Include="Hero.cs" />
+    <Compile Include="HighScores.cs" />
     <Compile Include="Level1.cs" />
     <Compile Include="Level2.cs" />
     <Compile Include="NewGame.cs">
@@ -167,6 +168,9 @@
     <None Include="Resources\bgNewGame.png" />
     <None Include="Resources\bleft1.png" />
     <None Include="Resources\bright2.png" />
+    <None Include="Resources\cool-buttons-games-pack-with-modern-material-style-buttons-different-png_252799.png" />
+    <None Include="Resources\9.jpg" />
+    <None Include="Resources\10.jpg" />
     <Content Include="Resources\enemy2tight.png" />
     <None Include="Resources\images.jpg" />
     <None Include="Resources\groundstuff.jpg" />

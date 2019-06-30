@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ZombieApocalypse
 {
+    [Serializable]
     public partial class Winner : Form
     {
         Timer timer3;
@@ -17,22 +21,50 @@ namespace ZombieApocalypse
         public Hero hero;
         int width;
         int height;
-        public Winner()
+        HighScores highScores;
+        public string FileName = "ZombieApocalypse";
+        public Winner(Hero hero)
         {
             InitializeComponent();
+            this.hero = hero;
             DoubleBuffered = true;
             width = this.Width;
             height = this.Height;
             Invalidate(true);
+            highScores = null;
+            try
+            {
+                using (FileStream fileStream = new FileStream(FileName, FileMode.Open))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    highScores = (HighScores)formatter.Deserialize(fileStream);
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                FileName = "ZombieApocalypse";
+                highScores = new HighScores();
+            }
 
+           
             
+            Invalidate(true);
+            highScores.add(hero.Kills, hero.Name);
             r = new Random();
             timer3 = new Timer();
             timer3.Interval = 50;
             timer3.Tick += new EventHandler(timer3_tick);
             timer3.Start();
+            using (FileStream fileStream = new FileStream(FileName, FileMode.Create))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(fileStream, highScores);
+            }
 
         }
+     
+       
         public void setKill(Hero her)
         {
             hero = her;

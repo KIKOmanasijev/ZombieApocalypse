@@ -3,27 +3,64 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ZombieApocalypse
 {
+    [Serializable]
     public partial class NewGame : Form
     {
         int width ;
          int   height;
         public string name;
+        public string FileName = "ZombieApocalypse";
+        HighScores highScores;
         public NewGame()
         {
-            InitializeComponent();
-            this.BackgroundImage = Properties.Resources.bgNewGame;
-            width = this.Width;
-            height = this.Height;
-            BackgroundImageLayout = ImageLayout.Stretch;
+            try
+            {
+                InitializeComponent();
+                viewHighScores();
+                if(highScores != null)
+                {
+                    for(int i= highScores.highScores.Count-1; i>=0; i--)
+                    {
+                        
+                        textBox1.Text +=  highScores.highScores[i].ToString() + " - " + highScores.names[highScores.highScores[i]] + Environment.NewLine;
+                    }
+                }
+                this.BackgroundImage = Properties.Resources.groundstuff;
+                width = this.Width;
+                height = this.Height;
+                BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            catch(Exception ex)
+            {
+               
+            }
         }
+        public void viewHighScores()
+        {
+            try
+            {
+                using (FileStream fileStream = new FileStream(FileName, FileMode.Open))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    highScores = (HighScores)formatter.Deserialize(fileStream);
+                }
 
+            }
+            catch (Exception ex)
+            {
+                FileName = "ZombieApocalypse";
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
           
@@ -57,7 +94,6 @@ namespace ZombieApocalypse
             this.Height = height;
         }
 
-      
-      
+       
     }
 }

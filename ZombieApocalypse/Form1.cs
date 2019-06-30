@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ZombieApocalypse
 {
-  
+    [Serializable] 
     public partial class Form1 : Form
     {
         
@@ -146,7 +146,8 @@ namespace ZombieApocalypse
         {
             timer1.Stop();
             timer2.Stop();
-            Winner win = new Winner();
+            Winner win = new Winner(this.hero);
+            
             win.setKill(this.hero);
             if (win.ShowDialog() == DialogResult.OK)
                 newGame();
@@ -168,6 +169,7 @@ namespace ZombieApocalypse
                 
                     HeroHealth.Value =hero.Health;
                     kills.Text = "Kills: " + hero.Kills.ToString();
+
                 HeroName1.Text = "Hero's Name: " + hero.Name;
 
             } catch (Exception exception)
