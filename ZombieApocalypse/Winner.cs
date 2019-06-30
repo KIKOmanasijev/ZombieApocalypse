@@ -53,7 +53,6 @@ namespace ZombieApocalypse
                 highScores = new HighScores();
             }
 
-           
             
             Invalidate(true);
             highScores.add(hero.Kills, hero.Name);
