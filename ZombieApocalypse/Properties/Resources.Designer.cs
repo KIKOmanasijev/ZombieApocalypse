@@ -63,9 +63,9 @@ namespace ZombieApocalypse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ammo_Image {
+        internal static System.Drawing.Bitmap _10 {
             get {
-                object obj = ResourceManager.GetObject("ammo_Image", resourceCulture);
+                object obj = ResourceManager.GetObject("_10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace ZombieApocalypse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bgNewGame {
+        internal static System.Drawing.Bitmap ammo_Image {
             get {
-                object obj = ResourceManager.GetObject("bgNewGame", resourceCulture);
+                object obj = ResourceManager.GetObject("ammo_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +143,16 @@ namespace ZombieApocalypse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap groundstuff {
             get {
                 object obj = ResourceManager.GetObject("groundstuff", resourceCulture);
@@ -193,9 +203,39 @@ namespace ZombieApocalypse.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap paly1 {
+        internal static System.Drawing.Bitmap newgame1 {
             get {
-                object obj = ResourceManager.GetObject("paly1", resourceCulture);
+                object obj = ResourceManager.GetObject("newgame1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap of {
+            get {
+                object obj = ResourceManager.GetObject("of", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap on {
+            get {
+                object obj = ResourceManager.GetObject("on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picgr {
+            get {
+                object obj = ResourceManager.GetObject("picgr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

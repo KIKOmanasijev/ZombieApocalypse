@@ -3,36 +3,75 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace ZombieApocalypse
 {
+    [Serializable]
     public partial class Winner : Form
     {
+        public WindowsMediaPlayer player = new WindowsMediaPlayer();
         Timer timer3;
         Random r;
         public Hero hero;
         int width;
         int height;
-        public Winner()
+        HighScores highScores;
+        public string FileName = "ZombieApocalypse";
+        public Winner(Hero hero)
         {
             InitializeComponent();
+            player.URL = "win.mp3";
+            player.controls.play();
+            this.hero = hero;
             DoubleBuffered = true;
             width = this.Width;
             height = this.Height;
+           
             Invalidate(true);
 
+            highScores = null;
+            try
+            {
+                using (FileStream fileStream = new FileStream(FileName, FileMode.Open))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    highScores = (HighScores)formatter.Deserialize(fileStream);
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                FileName = "ZombieApocalypse";
+                highScores = new HighScores();
+            }
+
+           
             
+            Invalidate(true);
+            highScores.add(hero.Kills, hero.Name);
             r = new Random();
             timer3 = new Timer();
             timer3.Interval = 50;
             timer3.Tick += new EventHandler(timer3_tick);
             timer3.Start();
-
+            using (FileStream fileStream = new FileStream(FileName, FileMode.Create))
+            {
+                IFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(fileStream, highScores);
+            }
+            this.BackgroundImage = Properties.Resources.picgr;
+            BackgroundImageLayout = ImageLayout.Stretch;
         }
+     
+       
         public void setKill(Hero her)
         {
             hero = her;
@@ -48,14 +87,13 @@ namespace ZombieApocalypse
 
         private void Winner_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.Clear(Color.White);
+         
             
-            
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            player.controls.stop();
             DialogResult = DialogResult.OK;
         }
 
@@ -66,17 +104,20 @@ namespace ZombieApocalypse
 
         private void button3_MouseLeave(object sender, EventArgs e)
         {
+
             button3.ForeColor = Color.Aqua;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            player.controls.stop();
             DialogResult = DialogResult.Cancel;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            player.controls.stop();
+            DialogResult = DialogResult.OK;
         }
 
         private void Winner_ResizeEnd(object sender, EventArgs e)

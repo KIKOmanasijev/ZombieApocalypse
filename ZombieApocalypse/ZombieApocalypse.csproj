@@ -63,6 +63,7 @@
       <DependentUpon>GameOver.cs</DependentUpon>
     </Compile>
     <Compile Include="Hero.cs" />
+    <Compile Include="HighScores.cs" />
     <Compile Include="Level1.cs" />
     <Compile Include="Level2.cs" />
     <Compile Include="NewGame.cs">
@@ -154,6 +155,9 @@
     <None Include="Resources\bright.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\on.png" />
+    <None Include="Resources\of.png" />
+    <None Include="Resources\picgr.jpg" />
     <None Include="Resources\paly1.png" />
     <None Include="Resources\Play.png" />
     <None Include="Resources\zw2left.png" />
@@ -167,10 +171,35 @@
     <None Include="Resources\bgNewGame.png" />
     <None Include="Resources\bleft1.png" />
     <None Include="Resources\bright2.png" />
+    <None Include="Resources\cool-buttons-games-pack-with-modern-material-style-buttons-different-png_252799.png" />
+    <None Include="Resources\9.jpg" />
+    <None Include="Resources\10.jpg" />
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\download.png" />
+    <None Include="Resources\9 %281%29.jpg" />
     <Content Include="Resources\enemy2tight.png" />
     <None Include="Resources\images.jpg" />
     <None Include="Resources\groundstuff.jpg" />
     <None Include="Resources\groundstuff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

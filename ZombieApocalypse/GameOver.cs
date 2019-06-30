@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace ZombieApocalypse
 {
@@ -15,10 +16,17 @@ namespace ZombieApocalypse
         string enemies;
         int width;
         int height;
+        public WindowsMediaPlayer player = new WindowsMediaPlayer();
         public GameOver(string enemies)
         {
+            player.URL = "end.mp3";
+          
+            player.controls.play();
             InitializeComponent();
-            width = this.Width;
+            this.BackgroundImage = Properties.Resources._10;
+            BackgroundImageLayout = ImageLayout.Stretch;
+        
+        width = this.Width;
             height = this.Height;
             this.enemies = enemies;
             EnemiesText.Text = "You kill " + this.enemies + " zoombies";

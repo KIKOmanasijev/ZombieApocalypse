@@ -12,6 +12,7 @@ namespace ZombieApocalypse
         public Point point;
         public Hero.Direction Direction;
         public bool Alive;
+      //  public Image img = Properties.Resources.download;
         public Color Color;
         public int x { get; set; }
         public int y { get; set; }
@@ -38,8 +39,9 @@ namespace ZombieApocalypse
         }
         public void Draw(Graphics g)
         {
-            Brush b = new SolidBrush(Color);
-            g.FillEllipse(b, point.X, point.Y, 5, 5);
+             Brush b = new SolidBrush(Color);
+             g.FillEllipse(b, point.X, point.Y, 5, 5);
+         
         }
 
         public void Move(int Width, int Height)

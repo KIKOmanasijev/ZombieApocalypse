@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WMPLib;
 namespace ZombieApocalypse
 {
-  
+    [Serializable] 
     public partial class Form1 : Form
     {
         
@@ -21,16 +21,23 @@ namespace ZombieApocalypse
         public Level2 level2doc;
         public Hero hero;
         NewGame newGame1;
+        bool on;
+       public WindowsMediaPlayer player = new WindowsMediaPlayer();
+   
         public Form1()
         {
             InitializeComponent();
+            player.URL = "zombieapocalypse.mp3";
+          
             this.DoubleBuffered = true;
-            
+            on = true;
+            player.settings.setMode("loop", true);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             newGame();
+           
             BackgroundImageLayout = ImageLayout.Stretch;
         }
 
@@ -74,6 +81,7 @@ namespace ZombieApocalypse
         }
         public void newGame()
         {
+           
             newGame1 = new NewGame();
             if (newGame1.ShowDialog() == DialogResult.OK)
             {
@@ -87,19 +95,19 @@ namespace ZombieApocalypse
               
                 timer1.Start();
                 timer2.Start();
-               
+                player.controls.play();
 
             }
             else
             {
                 this.Close();
             }
-          
+            
         }
         public void gameover()
         {
-           
-          
+
+            player.controls.pause();
             GameOver = new GameOver(hero.Kills.ToString());
             
             timer1.Stop();
@@ -120,14 +128,17 @@ namespace ZombieApocalypse
         }
         private void Timer1_Tick(object sender, EventArgs e)
         {
+           
             if (level1doc != null)
             {
                if (level1doc.timer1())
                 {
                     level2();
+                    Invalidate(true);
                 }
             }
             bool won = false;
+            Invalidate(true);
             if(level2doc != null)
             {
                 if(level2doc.timer1(ref won))
@@ -146,7 +157,9 @@ namespace ZombieApocalypse
         {
             timer1.Stop();
             timer2.Stop();
-            Winner win = new Winner();
+            player.controls.pause();
+            Winner win = new Winner(this.hero);
+            
             win.setKill(this.hero);
             if (win.ShowDialog() == DialogResult.OK)
                 newGame();
@@ -168,6 +181,7 @@ namespace ZombieApocalypse
                 
                     HeroHealth.Value =hero.Health;
                     kills.Text = "Kills: " + hero.Kills.ToString();
+
                 HeroName1.Text = "Hero's Name: " + hero.Name;
 
             } catch (Exception exception)
@@ -218,6 +232,8 @@ namespace ZombieApocalypse
 
             try
             {
+              
+                
                 if (e.KeyCode.ToString() == "Up")
                     hero.Move(Width, Height, 0);
                 if (e.KeyCode.ToString() == "Right")
@@ -228,10 +244,12 @@ namespace ZombieApocalypse
                     hero.Move(Width, Height, 3);
                 if (e.KeyCode.ToString() == "Space")
                 {
+                    
                     if (level1doc != null)
                         level1doc.Move(4);
                     else if (level2doc != null)
                         level2doc.Shoots = true;
+                 
                 }
                 if (level1doc != null)
                     level1doc.Move(1);
@@ -265,5 +283,20 @@ namespace ZombieApocalypse
                 
         }
 
+        private void volumeimg_Click(object sender, EventArgs e)
+        {
+            if (on)
+            {
+                on = false;
+                volumeimg.Image = Properties.Resources.of;
+                player.controls.pause();
+            }
+            else
+            {
+                on = true;
+                volumeimg.Image = Properties.Resources.on;
+                player.controls.play();
+            }
+        }
     }
 }
