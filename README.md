@@ -10,6 +10,8 @@
   
 </h4>
 
+![scrNewGame](https://user-images.githubusercontent.com/50083565/60402706-7069f200-9b93-11e9-8f06-785afdc25a05.png)
+
 <h5>
   Опис на играта
   </h5>
