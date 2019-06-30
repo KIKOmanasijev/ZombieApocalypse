@@ -46,7 +46,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(385, 117);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "CONGRATULATIONS \r\n\r\nYOU WON!\r\n";
+            this.textBox1.Text = "CONGRATULATIONS \r\n\r\nYOU WIN!\r\n";
             this.textBox1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button1

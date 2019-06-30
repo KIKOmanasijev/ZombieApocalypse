@@ -75,7 +75,7 @@ namespace ZombieApocalypse
         public void setKill(Hero her)
         {
             hero = her;
-            textBox1.Text = "CONGRATULATIONS\n" + hero.Name +"\nYOU WON!";
+            textBox1.Text = "CONGRATULATIONS\n" + hero.Name +"\nYOU WIN!";
             label2.Text = "You killed 2 BOSSES\n and \nYou Killed " + hero.Kills + " ZOMBIES";
 
         }
